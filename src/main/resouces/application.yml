@@ -1,0 +1,10 @@
+server:
+  port: 8888
+  
+spring:  elasticsearch:    rest:
+      connection-timeout: 30000
+      read-timeout: 30000      uris:      - http://localhost:9200
+      
+index-name: transactions
+time-to-live-ms: 100000
+page-size: 100
