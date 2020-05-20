@@ -7,4 +7,3 @@ spring:  elasticsearch:    rest:
       
 index-name: transactions
 time-to-live-ms: 100000
-page-size: 100

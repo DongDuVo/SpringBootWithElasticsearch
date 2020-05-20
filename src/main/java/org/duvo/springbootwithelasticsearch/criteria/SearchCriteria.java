@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import org.duvo.springbootwithelasticsearch.converter.Converter;
-import org.duvo.springbootwithelasticsearch.util.Util.OPERATOR;
+import org.duvo.springbootwithelasticsearch.util.Constants.OPERATOR;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

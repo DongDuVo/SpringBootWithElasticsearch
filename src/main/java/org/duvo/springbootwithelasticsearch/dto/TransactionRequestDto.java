@@ -10,8 +10,8 @@ public class TransactionRequestDto {
 	private long id;
 	private TransactionGroup group;
 	private TransactionType type;
-	private String firstname;
-	private String lastname;
+	private String userName;
+	private String content;
 	private BigDecimal amount;
 	
 	public long getId() {
@@ -32,17 +32,17 @@ public class TransactionRequestDto {
 	public void setType(TransactionType type) {
 		this.type = type;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getUserName() {
+		return userName;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getContent() {
+		return content;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public BigDecimal getAmount() {
 		return amount;

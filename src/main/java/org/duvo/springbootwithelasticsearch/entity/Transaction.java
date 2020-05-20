@@ -5,14 +5,18 @@ import java.math.BigDecimal;
 import org.duvo.springbootwithelasticsearch.constant.TransactionGroup;
 import org.duvo.springbootwithelasticsearch.constant.TransactionType;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+
+@JsonDeserialize(builder = Transaction.TransactionBuilder.class)
 public class Transaction {
 
 	private long time;
 	private long id;
 	private TransactionGroup group;
 	private TransactionType type;
-	private String firstname;
-	private String lastname;
+	private String userName;
+	private String content;
 	private BigDecimal amount;
 	
 	public long getTime() {
@@ -31,12 +35,12 @@ public class Transaction {
 		return type;
 	}
 	
-	public String getFirstname() {
-		return firstname;
+	public String getUserName() {
+		return userName;
 	}
 	
-	public String getLastname() {
-		return lastname;
+	public String getContent() {
+		return content;
 	}
 	
 	public BigDecimal getAmount() {
@@ -47,6 +51,7 @@ public class Transaction {
 		return new TransactionBuilder();
 	}
 
+	@JsonPOJOBuilder(withPrefix = "")
 	public static class TransactionBuilder {
 		private Transaction transaction = new Transaction();
 		
@@ -70,13 +75,13 @@ public class Transaction {
 			return this;
 		}
 		
-		public TransactionBuilder firstname(String firstname) {
-			transaction.firstname = firstname;
+		public TransactionBuilder username(String username) {
+			transaction.userName = username;
 			return this;
 		}
 		
-		public TransactionBuilder lastname(String lastname) {
-			transaction.lastname = lastname;
+		public TransactionBuilder content(String content) {
+			transaction.content = content;
 			return this;
 		}
 		
